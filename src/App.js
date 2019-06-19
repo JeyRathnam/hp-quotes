@@ -1,24 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Search from './Components/Search'
+import Quote from './Components/Quote'
+import Quotes from './Quotes'
 
 function App() {
+  const [searchString, setSearchString] = useState('')
+  const matches = []
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Search setSearchString={setSearchString}/>
+      {
+        Object.keys(Quotes).forEach(element => {
+          const message = Quotes[element]['Message'].toLowerCase()
+          if(searchString.length > 3 && message.includes(searchString.toLowerCase())){
+              matches.push(<Quote key={element} author={Quotes[element]['author']} text={Quotes[element]['Message']} />)
+          }        
+        })
+      }
+      <div className="matches">{matches}</div>
     </div>
   );
 }
