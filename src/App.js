@@ -5,16 +5,16 @@ import Quote from './Components/Quote'
 import Quotes from './Quotes'
 
 function App() {
-  const [searchString, setSearchString] = useState('')
+  const [searchString, setSearchString] = useState('harry')
   const matches = []
   return (
     <div className="App">
-      <Search setSearchString={setSearchString}/>
+      <Search searchString={searchString} setSearchString={setSearchString}/>
       {
         Object.keys(Quotes).forEach(element => {
           const message = Quotes[element]['Message'].toLowerCase()
           if(searchString.length > 3 && message.includes(searchString.toLowerCase())){
-              matches.push(<Quote key={element} author={Quotes[element]['author']} text={Quotes[element]['Message']} />)
+              matches.push(<Quote key={element} author={Quotes[element]['author']} text={Quotes[element]['Message']} searchString={searchString} />)
           }        
         })
       }
