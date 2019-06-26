@@ -42,7 +42,13 @@ export default function Quote(props) {
 
     return (
         <div>
-            <p><i>{author}</i> : {highlightText()}</p>
+            <div className="quote">
+            {highlightText()}
+            </div>
+            <span> - </span>
+            <div className="author">
+            {author}
+            </div>
         </div>
     )
 }

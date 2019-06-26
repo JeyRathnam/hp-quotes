@@ -1,33 +1,70 @@
+html{
+  margin : 0 auto;
+  height: 100%;
+  background-color: #131B3A;
+  /* background-image: linear-gradient(19deg, #21D4FD 0%, rgb(84, 74, 238) 100%); */
+}
+
+body {
+   
+   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif; 
+  /* -webkit-font-smoothing: antialiased; */
+}
+
 .App {
-  text-align: center;
+  text-align : center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Matches */
+.matches{
+  margin : 0 auto;
+  display: grid;
+  grid-template-columns: 92%;
+  grid-row-gap: 15px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.matches p {
+  font-size: 30px;
+  color: #d6cfe7;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.matches div{
+  text-align: left;
+}
+
+.matches div div, .matches div span {
+  display: inline;
+  justify-content: left;
+  font-size: 20px;
+  color: #d6cfe7;
+}
+
+/* Mark */
+mark {
+  background-color: #93a4f056;
+  color: #d6cfe7;
+  border-radius : 4px;
+}
+
+/* input */
+
+.search-input {
+  margin : 10px;
+}
+
+.search-input input {
+  width: 92%;
+  padding : 10px;
+  /* border : 1px solid rgba(113, 191, 236, 0.288); */
+  border : 1px solid white;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color : white;
+  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+  font-size: 40px;
+}
+
+.search-input input:focus {
+  outline-width: 0;
 }
