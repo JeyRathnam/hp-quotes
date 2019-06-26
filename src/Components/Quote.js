@@ -24,10 +24,12 @@ export default function Quote(props) {
         const output = []
         var position = 0
         const searchPositions = indexesOf(searchString.toLowerCase()).in(text.toLowerCase())
+        var i = 0
         searchPositions.forEach(searchPosition => {
             const normalText = text.substr(position, searchPosition)
             output.push(normalText)
-            output.push(<mark>{text.substr(searchPosition, searchString.length)}</mark>)
+            output.push(<mark key={i}>{text.substr(searchPosition, searchString.length)}</mark>)
+            i++;
             position = searchPosition + searchString.length
         });
 
